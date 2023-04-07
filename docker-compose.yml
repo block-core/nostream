@@ -3,6 +3,14 @@ services:
     build: .
     container_name: nostream
     environment:
+
+      VIRTUAL_HOST: relay.liberstad.com
+      VIRTUAL_PORT: 8008
+      VIRTUAL_NETWORK: proxy
+      VIRTUAL_PROTO: http
+      LETSENCRYPT_HOST: relay.liberstad.com
+      LETSENCRYPT_EMAIL: admin@liberstad.com
+
       RELAY_PORT: 8008
       # Master
       NOSTR_CONFIG_DIR: /home/node/.nostr

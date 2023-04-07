@@ -59,6 +59,7 @@ services:
         condition: service_completed_successfully
     restart: on-failure
     networks:
+      proxy:
       default:
   nostream-db:
     image: postgres
@@ -119,6 +120,9 @@ services:
         ipv4_address: 10.10.10.254
 
 networks:
+  proxy:
+    external: true
+    name: proxy
   default:
     name: nostream
     ipam:
